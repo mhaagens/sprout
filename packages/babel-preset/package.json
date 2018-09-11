@@ -1,5 +1,5 @@
 {
-  "name": "@sprout/babel-preset",
+  "name": "@mhaagens/babel-preset-sprout",
   "version": "0.0.3",
   "description": "",
   "main": "./lib/index.js",
@@ -9,7 +9,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "b6ac7d97157f94bad5f22c38d4855154e83c5d9c",
+  "gitHead": "2b960cbe64995ec07ef9311377ad0a4a53c401dc",
   "scripts": {
     "build": "minify src -d lib"
   },

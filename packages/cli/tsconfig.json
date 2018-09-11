@@ -7,7 +7,8 @@
  "module": "commonjs",
  "outDir": "./lib",
  "sourceMap": false,
- "strict": true
+ "strict": true,
+ "noImplicitAny": false
 },
 "include": [
   "./src/**/*.ts"
