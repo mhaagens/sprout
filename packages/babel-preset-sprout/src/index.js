@@ -34,8 +34,6 @@ export default declare((api, opts) => {
       "@babel/preset-react"
     ],
     plugins: [
-      transformRenegerator,
-      transformRuntime,
       syntaxDynamicImport,
       classPropertiesProposal,
       [decoratorsProposal, { legacy: true }],
