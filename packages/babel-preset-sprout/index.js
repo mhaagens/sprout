@@ -14,6 +14,7 @@ import styledPlugin from "babel-plugin-styled-components";
 export default declare((api, opts) => {
   api.assertVersion(7);
   const production = process.env.NODE_ENV === "production";
+  const ssr = opts.ssr || false;
 
   return {
     presets: [
@@ -35,7 +36,10 @@ export default declare((api, opts) => {
       restSpreadProposal,
       loadablePlugin,
       hotLoaderPlugin,
-      styledPlugin
+      [styledPlugin, {
+        ssr: ssr,
+        displayName: !production
+      }]
     ]
   };
 });
