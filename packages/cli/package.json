@@ -1,16 +1,20 @@
 {
-  "name": "sprout-cli",
-  "version": "0.0.2",
+  "name": "@sprout/cli",
+  "version": "0.0.1",
   "description": "",
   "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Martin Haagensli",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "commander": "^2.18.0",
     "inquirer": "^6.2.0"
-  }
+  },
+  "gitHead": "b6ac7d97157f94bad5f22c38d4855154e83c5d9c"
 }

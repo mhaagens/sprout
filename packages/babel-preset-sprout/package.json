@@ -1,12 +1,12 @@
 {
-  "name": "babel-preset-sprout",
-  "version": "0.4.14",
+  "name": "@sprout/babel-preset-sprout",
+  "version": "0.0.1",
   "description": "",
   "main": "./lib/index.js",
   "keywords": [],
   "author": "Martin Haagensli",
   "license": "ISC",
-  "gitHead": "6795ac5ba80feafd662a9b2f935c6d2ebd14ec0a",
+  "gitHead": "b6ac7d97157f94bad5f22c38d4855154e83c5d9c",
   "scripts": {
     "build": "minify src -d lib"
   },
