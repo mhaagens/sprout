@@ -1,52 +1,32 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _helperPluginUtils = require("@babel/helper-plugin-utils");
-
-var _presetReact = _interopRequireDefault(require("@babel/preset-react"));
-
-var _pluginTransformRegenerator = _interopRequireDefault(require("@babel/plugin-transform-regenerator"));
-
-var _pluginSyntaxDynamicImport = _interopRequireDefault(require("@babel/plugin-syntax-dynamic-import"));
-
-var _pluginProposalClassProperties = _interopRequireDefault(require("@babel/plugin-proposal-class-properties"));
-
-var _pluginProposalDecorators = _interopRequireDefault(require("@babel/plugin-proposal-decorators"));
-
-var _pluginProposalObjectRestSpread = _interopRequireDefault(require("@babel/plugin-proposal-object-rest-spread"));
-
-var _babel = _interopRequireDefault(require("react-loadable/babel"));
-
-var _babel2 = _interopRequireDefault(require("react-hot-loader/babel"));
-
-var _babelPluginStyledComponents = _interopRequireDefault(require("babel-plugin-styled-components"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _default = (0, _helperPluginUtils.declare)(function (api, opts) {
-  api.assertVersion(7);
-  var production = process.env.NODE_ENV === "production";
-  var ssr = opts.ssr ? opts.ssr : false;
-  var defaultTargets = ssr ? {
-    node: "current"
-  } : ["> 1%", "last 2 versions", "not ie <= 8"];
-  var targets = targets ? targets : defaultTargets;
+module.exports = () => {
+  const production = process.env.NODE_ENV === "production";
   return {
-    presets: [["@babel/preset-env", {
-      modules: false,
-      targets: targets
-    }], "@babel/preset-react"],
-    plugins: [production && transformRenegerator(), production && (0, _pluginSyntaxDynamicImport.default)(), (0, _pluginSyntaxDynamicImport.default)(), (0, _pluginProposalClassProperties.default)(), (0, _pluginProposalDecorators.default)({
-      legacy: true
-    }), (0, _pluginProposalObjectRestSpread.default)(), (0, _babel.default)(), (0, _babel2.default)(), (0, _babelPluginStyledComponents.default)({
-      ssr: ssr,
-      displayName: !production
-    })]
+    presets: [
+      [
+        require("@babel/preset-env"),
+        {
+          modules: false,
+          targets: {
+            node: "current",
+            browsers: ["> 1%", "last 2 versions", "not ie <= 8"]
+          }
+        }
+      ],
+      require("@babel/preset-react")
+    ],
+    plugins: [
+      require("@babel/plugin-transform-regenerator"),
+      require("@babel/plugin-syntax-dynamic-import"),
+      require("@babel/plugin-syntax-dynamic-import"),
+      require("@babel/plugin-proposal-class-properties"),
+      [require("@babel/plugin-proposal-decorators"), { legacy: true }],
+      require("@babel/plugin-proposal-object-rest-spread"),
+      require("react-loadable/babel"),
+      require("react-hot-loader/babel"),
+      [require("babel-plugin-styled-components"), {
+        ssr: ssr,
+        displayName: !production
+      }]
+    ]
   };
-});
-
-exports.default = _default;
+};
