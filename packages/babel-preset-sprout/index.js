@@ -26,7 +26,10 @@ export default declare((api, opts) => {
     presets: [
       [
         "@babel/preset-env",
-        targets
+        {
+          modules: false,
+          targets
+        }
       ],
       "@babel/preset-react"
     ],
