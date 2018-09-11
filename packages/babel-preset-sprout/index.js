@@ -40,12 +40,12 @@ var _default = (0, _helperPluginUtils.declare)(function (api, opts) {
       modules: false,
       targets: targets
     }], "@babel/preset-react"],
-    plugins: [production && transformRenegerator, production && _pluginSyntaxDynamicImport.default, _pluginSyntaxDynamicImport.default, _pluginProposalClassProperties.default, [_pluginProposalDecorators.default, {
+    plugins: [production && transformRenegerator(), production && (0, _pluginSyntaxDynamicImport.default)(), (0, _pluginSyntaxDynamicImport.default)(), (0, _pluginProposalClassProperties.default)(), (0, _pluginProposalDecorators.default)({
       legacy: true
-    }], _pluginProposalObjectRestSpread.default, _babel.default, _babel2.default, [_babelPluginStyledComponents.default, {
+    }), (0, _pluginProposalObjectRestSpread.default)(), (0, _babel.default)(), (0, _babel2.default)(), (0, _babelPluginStyledComponents.default)({
       ssr: ssr,
       displayName: !production
-    }]]
+    })]
   };
 });
 
