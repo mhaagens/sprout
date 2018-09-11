@@ -6,6 +6,10 @@
   "keywords": [],
   "author": "Martin Haagensli",
   "license": "ISC",
+  "gitHead": "6795ac5ba80feafd662a9b2f935c6d2ebd14ec0a",
+  "scripts": {
+    "build": "minify src -d lib"
+  },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
@@ -15,14 +19,18 @@
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "babel-plugin-styled-components": "^1.6.3",
-    "react-hot-loader": "^4.3.6",
     "react-loadable": "^5.5.0"
   },
-  "gitHead": "6795ac5ba80feafd662a9b2f935c6d2ebd14ec0a",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
-    "@babel/helper-plugin-utils": "^7.0.0"
+    "@babel/helper-plugin-utils": "^7.0.0",
+    "babel-minify": "^0.4.3",
+    "babel-plugin-styled-components": "^1.6.4",
+    "react-hot-loader": "^4.3.6"
+  },
+  "peerDependencies": {
+    "styled-components": "^3.4.6",
+    "react-hot-loader": "^4.3.6"
   }
 }
