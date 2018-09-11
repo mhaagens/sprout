@@ -14,16 +14,19 @@ import styledPlugin from "babel-plugin-styled-components";
 export default declare((api, opts) => {
   api.assertVersion(7);
   const production = process.env.NODE_ENV === "production";
-  const ssr = opts.ssr || false;
+  const ssr = opts.ssr ? opts.ssr : false;
+  const defaultTargets = ssr
+    ? {
+        node: "current"
+      }
+    : ["> 1%", "last 2 versions", "not ie <= 8"];
+  const targets = targets ? targets : defaultTargets;
 
   return {
     presets: [
       [
         "@babel/preset-env",
-        {
-          modules: false,
-          targets: ["> 1%", "last 2 versions", "not ie <= 8"]
-        }
+        targets
       ],
       "@babel/preset-react"
     ],
@@ -36,10 +39,13 @@ export default declare((api, opts) => {
       restSpreadProposal,
       loadablePlugin,
       hotLoaderPlugin,
-      [styledPlugin, {
-        ssr: ssr,
-        displayName: !production
-      }]
+      [
+        styledPlugin,
+        {
+          ssr: ssr,
+          displayName: !production
+        }
+      ]
     ]
   };
 });
