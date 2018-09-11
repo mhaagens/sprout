@@ -1,5 +1,6 @@
-module.exports = () => {
+module.exports = (ops) => {
   const production = process.env.NODE_ENV === "production";
+  const ssr = opts.ssr || false;
   return {
     presets: [
       [
