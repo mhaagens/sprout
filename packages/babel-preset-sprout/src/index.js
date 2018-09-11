@@ -34,12 +34,12 @@ export default declare((api, opts) => {
       "@babel/preset-react"
     ],
     plugins: [
-      syntaxDynamicImport,
-      classPropertiesProposal,
+      [syntaxDynamicImport],
+      [classPropertiesProposal],
       [decoratorsProposal, { legacy: true }],
-      restSpreadProposal,
-      loadablePlugin,
-      hotLoaderPlugin,
+      [restSpreadProposal],
+      [loadablePlugin],
+      [hotLoaderPlugin],
       [
         styledPlugin,
         {
