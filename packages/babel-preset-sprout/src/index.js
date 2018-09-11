@@ -15,12 +15,12 @@ export default declare((api, opts) => {
   api.assertVersion(7);
   const production = process.env.NODE_ENV === "production";
   const ssr = opts.ssr ? opts.ssr : false;
-  const defaultTargets = ssr
+  /* const defaultTargets = ssr
     ? {
         node: "current"
       }
     : ["> 1%", "last 2 versions", "not ie <= 8"];
-  const targets = targets ? targets : defaultTargets;
+  const targets = targets ? targets : defaultTargets; */
 
   return {
     presets: [
@@ -28,18 +28,20 @@ export default declare((api, opts) => {
         "@babel/preset-env",
         {
           modules: false,
-          targets
+          targets: ["> 1%", "last 2 versions", "not ie <= 8"]
         }
       ],
       "@babel/preset-react"
     ],
     plugins: [
-      [syntaxDynamicImport],
-      [classPropertiesProposal],
+      transformRenegerator,
+      transformRuntime,
+      syntaxDynamicImport,
+      classPropertiesProposal,
       [decoratorsProposal, { legacy: true }],
-      [restSpreadProposal],
-      [loadablePlugin],
-      [hotLoaderPlugin],
+      restSpreadProposal,
+      loadablePlugin,
+      hotLoaderPlugin,
       [
         styledPlugin,
         {
