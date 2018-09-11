@@ -2,7 +2,7 @@
   "name": "babel-preset-sprout",
   "version": "0.4.12",
   "description": "",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "keywords": [],
   "author": "Martin Haagensli",
   "license": "ISC",
@@ -19,7 +19,7 @@
     "react-hot-loader": "^4.3.6",
     "react-loadable": "^5.5.0"
   },
-  "gitHead": "f958846c5eeff4d36f1d137e11e584ee8d119c6f",
+  "gitHead": "6795ac5ba80feafd662a9b2f935c6d2ebd14ec0a",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
