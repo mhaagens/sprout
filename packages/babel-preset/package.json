@@ -9,7 +9,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "2b960cbe64995ec07ef9311377ad0a4a53c401dc",
+  "gitHead": "251cc0fb16be7d515f4a69643311e4de4a196e3c",
   "scripts": {
     "build": "minify src -d lib"
   },

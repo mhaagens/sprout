@@ -24,7 +24,7 @@
     "ora": "^3.0.0",
     "typescript": "^3.0.3"
   },
-  "gitHead": "b6ac7d97157f94bad5f22c38d4855154e83c5d9c",
+  "gitHead": "251cc0fb16be7d515f4a69643311e4de4a196e3c",
   "devDependencies": {
     "@types/commander": "^2.12.2",
     "@types/fs-extra": "^5.0.4",

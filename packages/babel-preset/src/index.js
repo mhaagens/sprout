@@ -1,6 +1,7 @@
 module.exports = opts => {
     const production = opts.production || process.env.NODE_ENV === "production";
     const ssr = opts.ssr || false;
+    const ignoreBrowserslistConfig = opts.ignoreBrowserslistConfig || true;
     const targets = opts.targets || {
       node: "current",
       browsers: ["> 1%", "last 2 versions", "not ie <= 8"]
@@ -11,6 +12,7 @@ module.exports = opts => {
           require("@babel/preset-env"),
           {
             modules: false,
+            ignoreBrowserslistConfig,
             targets
           }
         ],
