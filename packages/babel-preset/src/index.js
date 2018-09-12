@@ -19,6 +19,7 @@ module.exports = opts => {
         require("@babel/preset-react")
       ],
       plugins: [
+        require("@babel/plugin-transform-runtime"),
         require("@babel/plugin-transform-regenerator"),
         require("@babel/plugin-syntax-dynamic-import"),
         require("@babel/plugin-proposal-class-properties"),
