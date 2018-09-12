@@ -1,5 +1,5 @@
 module.exports = opts => {
-    const production = process.env.NODE_ENV === "production";
+    const production = opts.production || process.env.NODE_ENV === "production";
     const ssr = opts.ssr || false;
     const targets = opts.targets || {
       node: "current",
