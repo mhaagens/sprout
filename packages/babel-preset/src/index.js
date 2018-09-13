@@ -4,16 +4,16 @@ module.exports = opts => {
 
     return {
       plugins: [
-        "@babel/plugin-transform-runtime",
-        "@babel/plugin-transform-regenerator",
-        "@babel/plugin-syntax-dynamic-import",
-        "@babel/plugin-proposal-class-properties",
-        ["@babel/plugin-proposal-decorators", { legacy: true }],
-        "@babel/plugin-proposal-object-rest-spread",
-        "react-loadable/babel",
-        "react-hot-loader/babel",
+        require("@babel/plugin-transform-runtime"),
+        require("@babel/plugin-transform-regenerator"),
+        require("@babel/plugin-syntax-dynamic-import"),
+        require("@babel/plugin-proposal-class-properties"),
+        [require("@babel/plugin-proposal-decorators"), { legacy: true }],
+        require("@babel/plugin-proposal-object-rest-spread"),
+        require("react-loadable/babel"),
+        require( "react-hot-loader/babel"),
         [
-          "babel-plugin-styled-components",
+          require("babel-plugin-styled-components"),
           {
             ssr: ssr,
             displayName: !production
