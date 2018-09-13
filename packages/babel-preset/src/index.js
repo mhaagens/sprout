@@ -1,9 +1,10 @@
-module.exports = function(opts) {
+module.exports = function(api, opts) {
   const production = opts.production || process.env.NODE_ENV === "production";
   const ssr = opts.ssr || false;
   const targets = opts.targets;
 
-  if (!opts.targets) {
+  if (!targets) {
+    console.log(opts);
     throw new Error("babel-preset-sprout: Targets must be defined");
   }
 
