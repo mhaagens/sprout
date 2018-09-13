@@ -3,33 +3,31 @@ module.exports = opts => {
     const ssr = opts.ssr || false;
     const ignoreBrowserslistConfig = opts.ignoreBrowserslistConfig || true;
     const targets = opts.targets || {
-      node: "current",
-      browsers: ["> 1%", "last 2 versions", "not ie <= 8"]
+      node: "current"
     };
-    console.log(opts);
     return {
       presets: [
         [
-          require("@babel/preset-env"),
+          "@babel/preset-env",
           {
             modules: false,
             ignoreBrowserslistConfig,
             targets
           }
         ],
-        require("@babel/preset-react")
+        "@babel/preset-react"
       ],
       plugins: [
-        require("@babel/plugin-transform-runtime"),
-        require("@babel/plugin-transform-regenerator"),
-        require("@babel/plugin-syntax-dynamic-import"),
-        require("@babel/plugin-proposal-class-properties"),
-        [require("@babel/plugin-proposal-decorators"), { legacy: true }],
-        require("@babel/plugin-proposal-object-rest-spread"),
-        require("react-loadable/babel"),
-        require("react-hot-loader/babel"),
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-transform-regenerator",
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-proposal-class-properties",
+        ["@babel/plugin-proposal-decorators", { legacy: true }],
+        "@babel/plugin-proposal-object-rest-spread",
+        "react-loadable/babel",
+        "react-hot-loader/babel",
         [
-          require("babel-plugin-styled-components"),
+          "babel-plugin-styled-components",
           {
             ssr: ssr,
             displayName: !production
