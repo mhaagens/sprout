@@ -6,6 +6,7 @@ module.exports = opts => {
       node: "current",
       browsers: ["> 1%", "last 2 versions", "not ie <= 8"]
     };
+    console.log(opts);
     return {
       presets: [
         [
