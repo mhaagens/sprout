@@ -1,22 +1,8 @@
 module.exports = opts => {
     const production = opts.production || process.env.NODE_ENV === "production";
     const ssr = opts.ssr || false;
-    const ignoreBrowserslistConfig = opts.ignoreBrowserslistConfig || true;
-    const targets = opts.targets || {
-      node: "current"
-    };
+
     return {
-      presets: [
-        [
-          "@babel/preset-env",
-          {
-            modules: false,
-            ignoreBrowserslistConfig,
-            targets
-          }
-        ],
-        "@babel/preset-react"
-      ],
       plugins: [
         "@babel/plugin-transform-runtime",
         "@babel/plugin-transform-regenerator",
